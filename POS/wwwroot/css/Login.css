@@ -1,0 +1,23 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+}
+.login-area {
+    height: 100vh;
+}
+
+.login-cart {
+    background: #eeeeee;
+    padding: 30px;
+    border-radius: 30px;
+}
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #6e887c;
+    outline: none;
+}
+.login-btn {
+    padding: 10px 20px;
+}
