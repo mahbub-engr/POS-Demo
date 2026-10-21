@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="POS.wwwroot.Components.Home" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="POS.wwwroot.Components.Home" %>
 
 <!DOCTYPE html>
 
