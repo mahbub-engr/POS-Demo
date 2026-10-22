@@ -70,6 +70,7 @@
     <Content Include="Web.config" />
     <Content Include="wwwroot\Components\Home.aspx" />
     <Content Include="wwwroot\css\bootstrap\bootstrap.css" />
+    <Content Include="wwwroot\css\Home.css" />
     <Content Include="wwwroot\css\Login.css" />
     <Content Include="wwwroot\js\bootstrap\bootstrap.js" />
     <Content Include="wwwroot\LoginUI.aspx" />

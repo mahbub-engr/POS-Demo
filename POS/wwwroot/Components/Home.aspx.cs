@@ -13,5 +13,10 @@ namespace POS.wwwroot.Components
         {
 
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
