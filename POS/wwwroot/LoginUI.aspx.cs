@@ -39,8 +39,8 @@ namespace POS.wwwroot
             if ( userName!="" && userPassword!="" )
             {
                 DataTable dt = new DataTable();
-                dt = DBAccess.FillDataTable("select * from [User] where " +
-                    "UserName='" + userName + "' and Password='" + userPassword + "'", dt);
+                string query = $"EXEC GetUserByCredentials @UserName = '{userName}', @Password = '{userPassword}';";
+                dt = DBAccess.FillDataTable(query, dt);
                 if (dt != null && dt.Rows.Count>0)
                 {
                     Response.Redirect("Components/Home.aspx", false);
@@ -59,62 +59,6 @@ namespace POS.wwwroot
 
             }
 
-
-
-
-
-
-
-
-
-
-
-
-            //without database information login with cookie
-
-            //string userInput = userNameBox != null ? userNameBox.Text.Trim() : string.Empty;
-            //string userPassword = passwordBox != null ? passwordBox.Text.Trim() : string.Empty;
-            //bool isRememberMe = remeberMeCheck !=null && remeberMeCheck.Checked;
-            //if ( userInput == userName && userPassword == password) {
-            //    DateTime issueDate = DateTime.Now;
-            //    DateTime expirationDate = isRememberMe ? issueDate.AddDays(30) : issueDate.AddDays(30);
-
-            //    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket
-            //        (
-            //            1,
-            //            userInput,
-            //            issueDate,
-            //            expirationDate,
-            //            isRememberMe,
-            //            "POSUser",
-            //            FormsAuthentication.FormsCookiePath
-
-            //        );
-            //    string encryptedTicket = FormsAuthentication.Encrypt(ticket);
-            //    HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket)
-            //    {
-            //        HttpOnly =true,
-            //        Path=FormsAuthentication.FormsCookiePath
-            //    };
-            //    if (isRememberMe)
-            //    {
-            //        authCookie.Expires = ticket.Expiration;
-            //    }
-            //    Response.Cookies.Remove(FormsAuthentication.FormsCookieName);
-            //    Response.Cookies.Add(authCookie);
-            //    Response.Redirect("Components/Home.aspx",false);
-            //    Context.ApplicationInstance.CompleteRequest();
-
-            //}
-            //else
-            //{
-
-            //    if (errorMassage != null)
-            //    {
-            //        errorMassage.Text = "Invalid username or password.";
-
-            //    }
-            //}
         }
     }
 }
